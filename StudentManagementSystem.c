@@ -85,7 +85,6 @@ void add_records(int *size, struct Students **s) {
 
     *size += n;
 }
-
 void display_records(int size, struct Students *ptr) {
     for (int i = 0; i < size; i++) {
         printf("\nDetails of student %d:\n", i + 1);
@@ -95,7 +94,6 @@ void display_records(int size, struct Students *ptr) {
         printf("Marks  : %d\n", ptr[i].marks);
     }
 }
-
 void save_records(int size, struct Students *s) {
     FILE *ptr = fopen("records.dat", "wb");
     if (ptr == NULL) {
@@ -107,7 +105,6 @@ void save_records(int size, struct Students *s) {
     fclose(ptr);
     printf("Records saved successfully.\n");
 }
-
 void load_records(int *size, struct Students **s) {
     FILE *p = fopen("records.dat", "rb");
     if (p == NULL) {
@@ -133,7 +130,6 @@ void load_records(int *size, struct Students **s) {
 
     printf("Records loaded successfully (%d records).\n", *size);
 }
-
 void delete_record(int *size, struct Students **s) {
     char n[30];
     int i, j, f = 0;
@@ -163,7 +159,6 @@ void delete_record(int *size, struct Students **s) {
     if (!f)
         printf("No match found.\n");
 }
-
 void modify_record(int size, struct Students *s) {
     char name[30];
     int f = 0;
