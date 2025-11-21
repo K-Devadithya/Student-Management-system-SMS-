@@ -211,21 +211,13 @@ malloc → initial array
 realloc → expansion and shrinking
 free → at program end
 
-Common mistakes your code avoids:
+Common mistakes my code avoids:
 
 Using memory after freeing it.
 
 Forgetting to update size after realloc.
 
 Losing original pointer due to unsafe realloc patterns.
-
-
-Memory risk still present:
-
-In add_records and load_records, direct realloc assignment may cause pointer loss if realloc fails.
-
-
-
 ---
 
 5. File Handling Notes
@@ -236,16 +228,15 @@ fopen("records.dat", "wb") → saves data
 
 fopen("records.dat", "rb") → loads data
 
-
 Why binary format?
 
 Ensures raw struct bytes are preserved.
 
 No parsing required during load.
 
-
 Common file errors avoided:
 
 Using %s to save strings (unsafe)
 
 Saving one field per line instead of entire struct blocks
+
